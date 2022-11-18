@@ -40,6 +40,8 @@ Route::namespace ('App\Http\Controllers')->group(function () {
     Route::get('dash', 'SiteController@dashboard');
     Route::get('/hello', 'SiteController@hello');
     Route::get('pict', 'SiteController@picture');
+    Route::get('demo', 'SiteController@demo');
+
 });
 
 Route::get('paint', function () {
@@ -49,3 +51,5 @@ Route::get('paint', function () {
 Route::middleware(['auth'])->group(function () {
 
 });
+
+Route::resource('posts', 'App\Http\Controllers\PostController');

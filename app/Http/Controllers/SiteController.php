@@ -31,4 +31,12 @@ class SiteController extends Controller
     {
         return view('picture');
     }
+
+    public function demo()
+    {
+        $name = '原儀';
+        $age = '20';
+        return view('test.demo', compact('name', 'age'));
+    }
+
 }
