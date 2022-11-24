@@ -41,6 +41,7 @@ Route::namespace ('App\Http\Controllers')->group(function () {
     Route::get('/hello', 'SiteController@hello');
     Route::get('pict', 'SiteController@picture');
     Route::get('demo', 'SiteController@demo');
+    Route::get('lov', 'SiteController@love');
 
 });
 

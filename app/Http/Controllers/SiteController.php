@@ -31,6 +31,10 @@ class SiteController extends Controller
     {
         return view('picture');
     }
+    public function love()
+    {
+        return view('love');
+    }
 
     public function demo()
     {
