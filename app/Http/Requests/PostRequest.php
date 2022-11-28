@@ -25,7 +25,8 @@ class PostRequest extends FormRequest
     {
         return [
             'title' => 'required|max:10',
-            'desc' => 'required',
+            'price' => 'required',
+            'desc' => 'required|200',
             //
         ];
     }

@@ -2,24 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
 
-class Postcontroller extends Controller
+class ItemController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function _construct()
-    {
-
-        //
-
-    }
-
     public function index()
     {
         //
@@ -41,26 +34,13 @@ class Postcontroller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-
     public function store(PostRequest $request)
     {
-
         //收到Postman後回傳"first row"
-        return 'first row';
-        // //驗證示範
-        // $validator = Validated::make($request->all(), [
-        //     'title' => 'require | max:10',
-        //     'desc' => 'required',
-        // ]);
+        return;
 
-        // if ($validator->fails) {
-        //     return $validator;
+        //
 
-        // }
-        return 'ok';
-        return $request->all();
-        //返回到index頁面
-        // return redirect(url('posts/' . 1));
     }
 
     /**
@@ -107,6 +87,4 @@ class Postcontroller extends Controller
     {
         //
     }
-
-    //public function
 }

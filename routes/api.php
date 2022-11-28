@@ -22,4 +22,6 @@ Route::apiResource('posts', 'App\Http\Controllers\Api\PostController');
 
 Route::any('pass', 'App\Http\Controllers\Api\PostController@doany');
 
+Route::apiResource('posts', 'App\Http\Controllers\Api\PostController');
+
 //Route::apiResource('posts', 'App\Controllers\Api\PostController');
