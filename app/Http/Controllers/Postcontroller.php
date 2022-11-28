@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
 
 class Postcontroller extends Controller
@@ -41,19 +42,22 @@ class Postcontroller extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        //驗證示範
-        $validator = validator::make($request->all(), [
-            'title' => 'require | max:10',
-            'desc' => 'required',
-        ]);
 
-        if ($validator->fails) {
-            dd($validator);
+        //收到Postman後回傳"first row"
+        return 'first row';
+        // //驗證示範
+        // $validator = Validated::make($request->all(), [
+        //     'title' => 'require | max:10',
+        //     'desc' => 'required',
+        // ]);
 
-        }
+        // if ($validator->fails) {
+        //     return $validator;
 
+        // }
+        return 'ok';
         return $request->all();
         //返回到index頁面
         // return redirect(url('posts/' . 1));
