@@ -20,7 +20,7 @@ class SiteController extends Controller
 
     public function dashboard()
     {
-        return view('dashboard');
+        return view('test.dashboard');
     }
 
     public function gallery()
@@ -29,15 +29,21 @@ class SiteController extends Controller
     }
     public function picture()
     {
-        return view('picture');
+        return view('test.picture');
     }
     public function love()
     {
-        return view('love');
+        return view('test.love');
+    }
+
+    public function spiral()
+    {
+        return view('test.spiral');
     }
 
     public function demo()
     {
+
         $name = '原儀';
         $age = '20';
         return view('test.demo', compact('name', 'age'));

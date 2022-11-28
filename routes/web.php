@@ -42,7 +42,7 @@ Route::namespace ('App\Http\Controllers')->group(function () {
     Route::get('pict', 'SiteController@picture');
     Route::get('demo', 'SiteController@demo');
     Route::get('lov', 'SiteController@love');
-
+    Route::get('spir', 'SiteController@spiral');
 });
 
 Route::get('paint', function () {
@@ -54,3 +54,23 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::resource('posts', 'App\Http\Controllers\PostController');
+
+Route::get('paint', function () {
+    return view('paint');
+    //方法二需增加->name('mypaint')
+})->name('mypaint');
+
+Route::middleware(['auth'])->group(function () {
+
+});
+
+Route::post('posts', 'App\Http\Controllers\PostController@store');
+
+Route::get('/url', function () {
+    //方法ㄧ
+    //return url('paint');
+    //方法二
+    //return route('mypaint');
+    //return action([SiteController::class, 'demo']);
+    // return url()->full()
+});

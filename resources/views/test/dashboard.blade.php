@@ -3,6 +3,6 @@
 @section('name','儀表板')
 @section('lovjs')
 {{-- @section('content') --}}
-
-
+{{$global}}
+{{$multi}}
 {{-- @endsection --}}

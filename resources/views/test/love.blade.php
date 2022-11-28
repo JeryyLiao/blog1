@@ -13,6 +13,5 @@
 </body>
 <!-- partial -->
   <script  src="{{ asset('love/script.js') }}"></script>
-@yield('lovjs')
 </body>
 </html>

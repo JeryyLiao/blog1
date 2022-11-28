@@ -10,6 +10,7 @@
 
 </head>
 <body>
+@yield('spiral')
 @yield('content')
 @yield('abc')
 <!-- partial:index.partial.html -->
@@ -333,7 +334,7 @@
 </div>
 @yield('content')
 @section('lovejs')
-
+@yield('spiral')
 @endsection
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js'></script><script  src="{{asset('dashboard/script.js')}}"></script>

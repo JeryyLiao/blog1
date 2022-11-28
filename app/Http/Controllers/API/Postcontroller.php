@@ -25,7 +25,11 @@ class Postcontroller extends Controller
      */
     public function store(Request $request)
     {
+        return $request->all();
+        //返回到index頁面
+
         //
+        //return redirect(url('posts/' . 1));
     }
 
     /**
@@ -60,5 +64,19 @@ class Postcontroller extends Controller
     public function destroy($id)
     {
         //
+
     }
+
+    //public function
+
+    public function doany(Request $request)
+    {
+        return $request->all();
+        //返回到index頁面
+
+        //
+        //return redirect(url('posts/' . 1));
+
+    }
+
 }
