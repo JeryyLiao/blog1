@@ -65,6 +65,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::post('posts', 'App\Http\Controllers\PostController@store');
+Route::post('items', 'App\Http\Controllers\ItemController@store');
 
 Route::get('/url', function () {
     //方法ㄧ

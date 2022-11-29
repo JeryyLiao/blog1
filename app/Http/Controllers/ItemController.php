@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\PostRequest;
+use App\Http\Requests\ItemRequest;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
@@ -34,12 +33,12 @@ class ItemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PostRequest $request)
+    public function store(ItemRequest $request)
     {
-        //收到Postman後回傳"first row"
-        return;
-
+        return 'first row';
         //
+        return 'ok';
+        return $request->all();
 
     }
 

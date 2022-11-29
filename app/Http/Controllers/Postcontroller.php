@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
 
-class Postcontroller extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
