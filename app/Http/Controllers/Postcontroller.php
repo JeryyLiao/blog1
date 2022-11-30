@@ -22,6 +22,7 @@ class PostController extends Controller
 
     public function index()
     {
+        return '所有文章';
         //
     }
 
@@ -32,6 +33,7 @@ class PostController extends Controller
      */
     public function create()
     {
+        return view('posts.create');
         //
     }
 
@@ -46,7 +48,7 @@ class PostController extends Controller
     {
 
         //收到Postman後回傳"first row"
-        return 'first row';
+        //return 'first row';
         // //驗證示範
         // $validator = Validated::make($request->all(), [
         //     'title' => 'require | max:10',
@@ -57,7 +59,7 @@ class PostController extends Controller
         //     return $validator;
 
         // }
-        return 'ok';
+        //return 'ok';
         return $request->all();
         //返回到index頁面
         // return redirect(url('posts/' . 1));

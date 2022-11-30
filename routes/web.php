@@ -75,3 +75,7 @@ Route::get('/url', function () {
     //return action([SiteController::class, 'demo']);
     // return url()->full()
 });
+
+//routes/web.php
+Route::resource('items', 'App\Http\Controllers\ItemController');
+Route::resource('posts', 'App\Http\Controllers\Postcontroller');
