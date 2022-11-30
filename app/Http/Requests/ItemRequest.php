@@ -25,7 +25,7 @@ class ItemRequest extends FormRequest
     {
         return [
             'title' => 'required|max:10',
-            'price' => 'required|int|mix:0',
+            'price' => 'required|integer|mix:0',
             'desc' => 'max:200',
             //
         ];

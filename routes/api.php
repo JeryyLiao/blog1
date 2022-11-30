@@ -23,6 +23,7 @@ Route::apiResource('posts', 'App\Http\Controllers\Api\PostController');
 Route::any('pass', 'App\Http\Controllers\Api\PostController@doany');
 
 Route::post('items', 'App\Http\Controllers\Api\ItemController@store');
+Route::post('articles', 'App\Http\Controllers\Api\ArticleController@store');
 
 //
 //Route::

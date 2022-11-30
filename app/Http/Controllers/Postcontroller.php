@@ -75,11 +75,11 @@ class PostController extends Controller
                 $extension = $file->getClientOriginalExtension(); //副檔名
                 $fileName = time() . "." . $extension; //重新命名
                 //$data['pic'] = $filename;
-                dd($fileName);
+                // dd($fileName);
                 $path = $file->storeAs('public/pic', $fileName); //儲存至指定目錄
             }
         }
-        return 'ok';
+        return $request->all();
 
     }
 
