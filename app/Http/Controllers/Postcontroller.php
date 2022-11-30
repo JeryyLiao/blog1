@@ -33,8 +33,12 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        $modes = ['recommend' => '編輯精選', 'season' => '當季商品', 'cp' => '超值商品'];
+        return view('posts.create', compact('modes'));
+        $mode = 'cp';
+        return view('posts.create', compact('modes', 'mode'));
         //
+
     }
 
     /**
@@ -60,9 +64,23 @@ class PostController extends Controller
 
         // }
         //return 'ok';
-        return $request->all();
+        //dd($request->file('pic'));
+        //return $request->all();
         //返回到index頁面
         // return redirect(url('posts/' . 1));
+        if ($request->hasFile('pic')) {
+            $file = $request->file('pic'); //獲取UploadFile例項
+            if ($file->isValid()) { //判斷檔案是否有效
+                //$filename = $file->getClientOriginalName(); //檔案原名稱
+                $extension = $file->getClientOriginalExtension(); //副檔名
+                $fileName = time() . "." . $extension; //重新命名
+                //$data['pic'] = $filename;
+                dd($fileName);
+                $path = $file->storeAs('public/pic', $fileName); //儲存至指定目錄
+            }
+        }
+        return 'ok';
+
     }
 
     /**
