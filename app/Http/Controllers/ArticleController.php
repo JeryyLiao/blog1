@@ -14,6 +14,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
+        return '所有文章';
+
         //
         // return 'index';
     }
@@ -27,7 +29,14 @@ class ArticleController extends Controller
     {
         // return 'create';
         //
+        $categorys = [1 => '類別1', 2 => '類別2', 3 => '類別3'];
+        $category = 2;
+
+        return view('articles.create', compact('categorys', 'category'));
+
+        // return view('articles.create', compact('categorys', 'category'));
         return view('articles.create');
+
     }
 
     /**

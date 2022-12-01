@@ -25,10 +25,10 @@ class ArticleRequest extends FormRequest
     {
         return [
             'subject' => 'required|string|max:50',
-            'category' => 'required|integer|mix:1',
+            'category' => 'required|integer',
             'desc' => 'required|max:400|string',
-            'status' => 'boolean',
-            'sort' => 'required|interger',
+            'sort' => 'required|integer',
+            'status' => 'required|integer',
 
             //
         ];

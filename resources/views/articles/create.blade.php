@@ -7,25 +7,34 @@
 
 
 {{-- 輸入項標籤 --}}
-{!! Form::label('title', '標題') !!}<br>
+{!! Form::label('subject', '標題') !!}<br>
 {{-- 單行文字輸入項 --}}
-{!! Form::text('title', '預設內容', ['class' => 'myclass', 'style' => 'color:red', 'xx' => 'yy']) !!}<br>
+{!! Form::text('subject', '預設內容', ['class' => 'myclass', 'style' => 'color:red', 'xx' => 'yy']) !!}<br>
 
 
 {{-- category --}}
 {!! Form::label('category', '類別模式', []) !!}
-{!! Form::select('category', ['1' => '類別1', '2' => '類別2', '3' => '類別3'], null, [
+{!! Form::select('category', $categorys,$category, [
 'category' => '請選擇類別模式',
 ]) !!}<br>
 
 
 {{-- 多行文字輸入項 --}}
-{!! Form::label('contact', '內文') !!}
-{!! Form::textarea('contact', null, ['cols' => 70, 'rows' => 30]) !!}<br>
+{!! Form::label('desc', '內文') !!}
+{!! Form::textarea('desc', null, ['cols' => 70, 'rows' => 10]) !!}<br>
 {{-- error 標籤 --}}<br>
 @error('title')
 <div class="alert alert-danger">{{ $message }}</div>
 @enderror<br>
+
+{{-- 輸入項標籤 --}}
+{!! Form::label('sort', '排序') !!}<br>
+{{-- 單行文字輸入項 --}}
+{!! Form::text('sort', 0, ['class' => 'myclass', 'style' => 'color:black', 'xx' => 'yy']) !!}<br>
+
+{{-- radio輸入項 --}}
+開啟{!! Form::radio('status', 1, true) !!}
+關閉{!! Form::radio('status', 0, false) !!}<br>
 
 
 {{-- //日期輸入項 --}}
