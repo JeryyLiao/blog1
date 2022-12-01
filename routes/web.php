@@ -79,4 +79,5 @@ Route::get('/url', function () {
 //routes/web.php
 Route::resource('items', 'App\Http\Controllers\ItemController');
 Route::resource('posts', 'App\Http\Controllers\Postcontroller');
-Route::post('articles', 'App\Http\Controllers\ArticleController@stroe');
+
+Route::resource('/articles', 'App\Http\Controllers\ArticleController');

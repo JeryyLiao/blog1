@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ArticleRequest;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -26,6 +27,7 @@ class ArticleController extends Controller
     {
         // return 'create';
         //
+        return view('articles.create');
     }
 
     /**
@@ -34,7 +36,7 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArticleRequest $request)
     {
         if ($request->hasFile('pic')) {
             $file = $request->file('pic'); //獲取UploadFile例項

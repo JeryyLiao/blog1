@@ -3,11 +3,11 @@
 {{-- 開啟表單 --}}
 {{-- {!! Form::open(['action'=>'App\Http\Controllers\ArticleController@store','method'=>'POST','files'=>true]) !!} --}}
 {{-- {!! Form::open(['url' => 'posts', 'method' => 'POST', 'files' => true]) !!} --}}
-{!! Form::open(['url' => 'posts', 'method' => 'POST','files' => true]) !!}
+{!! Form::open(['url' => 'articles', 'method' => 'POST','files' => true]) !!}
 
 
 {{-- 輸入項標籤 --}}
-{!! Form::subject('title', '標題') !!}<br>
+{!! Form::label('title', '標題') !!}<br>
 {{-- 單行文字輸入項 --}}
 {!! Form::text('title', '預設內容', ['class' => 'myclass', 'style' => 'color:red', 'xx' => 'yy']) !!}<br>
 
