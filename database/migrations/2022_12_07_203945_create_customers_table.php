@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tags', function (Blueprint $table) {
+        Schema::create('ustomers', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('subject', 50);
-            $table->string('type', 30);
-            $table->string('url', 255);
-            $table->integer('sort')->default(0);
+            $table->string('cust_no', 50);
+            $table->string('custname', 50);
+            $table->string('remark', 50);
+
         });
     }
 
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tags');
+        Schema::dropIfExists('ustomers');
     }
 };

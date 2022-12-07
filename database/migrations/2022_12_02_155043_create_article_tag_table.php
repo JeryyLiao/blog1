@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('article_tag', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->bigInteger('tag-id');
+            $table->bigInteger('article-id');
         });
     }
 

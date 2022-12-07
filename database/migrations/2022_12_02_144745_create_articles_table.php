@@ -14,15 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('articles', function (Blueprint $table) {
-			      $table->id();
-            $table->string('subject',100);
+            $table->id();
+            $table->string('subject', 100);
             $table->text('content');
             $table->bigInteger('cgy_id');
             $table->boolean('enabled')->default(true);
             $table->integer('sort')->default(0);
             $table->timestamp('enabled_at')->nullable();
-            $table->string('tag',200)->nullable();
-            $table->string('pic',255);
+            $table->string('tag', 200)->nullable();
+            $table->string('pic', 255);
             $table->timestamps();
         });
     }

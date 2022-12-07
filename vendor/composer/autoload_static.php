@@ -539,7 +539,6 @@ class ComposerStaticInit26f19ce0dab7c8dfb2e1aabc3b6f1bc3
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\API\\ItemController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/ItemController.php',
-        'App\\Http\\Controllers\\API\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/PostController.php',
         'App\\Http\\Controllers\\ArticleController' => __DIR__ . '/../..' . '/app/Http/Controllers/ArticleController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\ItemController' => __DIR__ . '/../..' . '/app/Http/Controllers/ItemController.php',
