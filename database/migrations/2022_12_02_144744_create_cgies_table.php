@@ -15,10 +15,12 @@ return new class extends Migration
     {
         Schema::create('cgies', function (Blueprint $table) {
             $table->id();
+            //範例是title,因為此處未修改變成subject
             $table->string('subject', 100);
             $table->string('pic', 255)->nullable();
             $table->text('desc')->nullable();
             $table->boolean('enabled')->default(true);
+            $table->timestamp('enabled_at')->nullable();
             $table->integer('sort')->default(0);
             $table->timestamps();
         });
