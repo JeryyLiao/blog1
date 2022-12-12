@@ -31,7 +31,7 @@ return new class extends Migration
     {
         Schema::table('cgies', function (Blueprint $table) {
           $table->renameColumn('title','subject');
-          $table->integer('sort')->nullable(false)->default(0)->change();
+         // $table->integer('sort')->nullable(false)->default(0)->change();
 
           //
         });
