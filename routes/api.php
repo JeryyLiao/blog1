@@ -26,6 +26,14 @@ Route::post('items', 'App\Http\Controllers\Api\ItemController@store');
 Route::post('articles', 'App\Http\Controllers\Api\ArticleController@store');
 Route::resource('/articles', 'App\Http\Controllers\ArticleController');
 
+//加入驗證路由
+Route::group(['prefix' => 'auth', 'namespace' => 'App\Http\Controllers\Api'], function () {
+    Route::get('/', 'AuthController@me')->name('me');
+    Route::post('login', 'AuthController@login')->name('login');
+    Route::post('logout', 'AuthController@logout')->name('logout');
+});
+
+
 //
 //Route::
 
