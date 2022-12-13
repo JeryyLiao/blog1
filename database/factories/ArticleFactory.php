@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Article>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
 class ArticleFactory extends Factory
 {
@@ -18,17 +18,13 @@ class ArticleFactory extends Factory
     public function definition()
     {
         return [
-          'subject'=>$this->faker->realText(100),
-          'content'=>$this->faker->realText(),
-          'cgy_id'=>rand(1,10),
-          'enabled_at'=>Carbon::now()->addDays(rand(0,20)),
-          'sort'=>rand(1,10),
-          'pic'=>$this->faker->imageUrl(),
-          'enabled'=>$this->faker->randomElement([true,false]),
-
-
-
-            //
+            'subject' => $this->faker->realText(20),
+            'content' => $this->faker->realText,
+            'enabled_at' => Carbon::now()->addDays(rand(0,20)),
+            'sort'  => rand(0,20),
+            'pic' => $this->faker->imageUrl,
+            'enabled' => $this->faker->randomElement([true,false]),
+            'cgy_id' => rand(1,20)
         ];
     }
 }

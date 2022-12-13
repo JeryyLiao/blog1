@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ustomers', function (Blueprint $table) {
+        Schema::create('cgies', function (Blueprint $table) {
             $table->id();
+            $table->string('subject',100);
+            $table->string('pic',255)->nullable();
+            $table->text('desc')->nullable();
+            $table->boolean('enabled')->default(true);
+            $table->timestamp('enabled_at')->nullable();
+            $table->integer('sort')->default(0);
             $table->timestamps();
-            $table->string('cust_no', 50);
-            $table->string('custname', 50);
-            $table->string('remark', 50);
-
         });
     }
 
@@ -30,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ustomers');
+        Schema::dropIfExists('cgies');
     }
 };

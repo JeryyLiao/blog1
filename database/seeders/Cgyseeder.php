@@ -8,7 +8,7 @@ use App\Models\Cgy;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class Cgyseeder extends Seeder
+class CgySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,25 +17,15 @@ class Cgyseeder extends Seeder
      */
     public function run()
     {
-      Cgy::truncate(); //把所有資料清空，並重置主鍵
-      $faker = Factory::create('zh_TW');
+        Cgy::truncate(); //把所有資料清空，並重置主鍵
+        $faker = Factory::create('zh_TW');
 
-
-         for($i = 1; $i <= 200; $i ++ ){
-        Cgy::create([
-          'title' => $faker->company,
-
-         'enabled'=> $faker->randomElement([true,false]),
-
-        ]);
-      }
-
+        //建立資料
+        // for ($i=1; $i <=100 ; $i++) { 
+        //     //Cgy::create(['title' => '分類' . rand(1,1000) , 'enabled' => true, 'enabled_at' => Carbon::now()->addDays(rand(0,10))]);
+        //     //Cgy::create(['title' => $faker->realText(15) , 'enabled' => $faker->randomElement([true,false]), 'enabled_at' => Carbon::createFromFormat('Y-m-d',$faker->date)]);
+        
+        // }
+        Cgy::factory()->times(100)->create();
     }
 }
-
-
-
-  // Cgy::create(['subject'=>'分類' . rand(1,1000) ,'enabled'=> true,'enabled_at'=> Carbon::now()->addDays(rand(0,10))]);//
-
-
-    //Cgy::create(['subject'=>$faker->realText(15),'enabled'=> $faker->randomElement([true,false]),'enabled_at'=>Carbon::createFromFormat('Y-M-D'),'enabled_at'=> Carbon::now()->addDays(rand(0,10))]);//

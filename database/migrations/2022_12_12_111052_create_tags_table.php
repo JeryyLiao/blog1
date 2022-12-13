@@ -13,14 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cgies', function (Blueprint $table) {
+        Schema::create('tags', function (Blueprint $table) {
             $table->id();
-            //範例是title,因為此處未修改變成subject
-            $table->string('subject', 100);
-            $table->string('pic', 255)->nullable();
-            $table->text('desc')->nullable();
-            $table->boolean('enabled')->default(true);
-            $table->timestamp('enabled_at')->nullable();
+            $table->string('title',50);
+            $table->string('url',255)->nullable();
             $table->integer('sort')->default(0);
             $table->timestamps();
         });
@@ -33,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cgies');
+        Schema::dropIfExists('tags');
     }
 };

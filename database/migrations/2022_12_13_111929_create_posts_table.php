@@ -13,8 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->string('title',50);
+            $table->string('pic',255)->nullable();
+            $table->integer('sort')->default(0);
+            $table->boolean('enabled')->default(true);
+            $table->string('content');
+            $table->string('status',10)->default('draft');
             $table->timestamps();
         });
     }
@@ -26,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('posts');
     }
 };

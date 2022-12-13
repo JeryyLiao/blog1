@@ -14,13 +14,15 @@ class PostFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    //protected $model = Post::class;
     public function definition()
     {
-      return [
-             /*'title'=>$this->faker->sentence*/
+        return [
             'title' => $this->faker->realText(20),
             'content' => $this->faker->realText(50),
-            'status' => $this->faker->randomElement(['draft', 'published'])];
+            'status' => $this->faker->randomElement(['draft','published']),
+            'pic' => $this->faker->imageUrl(640,480),
+            'sort' => rand(0,20),
+            'enabled' => $this->faker->randomElement([true,false]),
+        ];
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,10 +17,10 @@ class CgyFactory extends Factory
      */
     public function definition()
     {
-        return [
-
-
-            //
-        ];
+        return['subject' => $this->faker->realText(15) ,
+               'enabled' => $this->faker->randomElement([true,false]), 
+               'enabled_at' => Carbon::createFromFormat('Y-m-d',$this->faker->date),
+               'pic' => $this->faker->imageUrl($width = 640, $height = 480)
+            ];
     }
 }

@@ -2,7 +2,7 @@
 
 return [
 
-  /*
+    /*
     |--------------------------------------------------------------------------
     | Authentication Defaults
     |--------------------------------------------------------------------------
@@ -11,24 +11,14 @@ return [
     | reset options for your application. You may change these defaults
     | as required, but they're a perfect start for most applications.
     |
-    */
+     */
 
     'defaults' => [
-    'guard' => 'web',
-    'passwords' => 'users',
-  ],
-    'guards' => [
-    'web' => [
-    'driver' => 'session',
-    'provider' => 'users',
+        'guard' => 'web',
+        'passwords' => 'users',
     ],
 
-      'api' => [
-      'driver' => 'jwt',
-      'provider' => 'users',
-    ],
-  ],
-  /*
+    /*
     |--------------------------------------------------------------------------
     | Authentication Guards
     |--------------------------------------------------------------------------
@@ -43,16 +33,20 @@ return [
     |
     | Supported: "session"
     |
-    */
+     */
 
-  'guards' => [
-    'web' => [
-      'driver' => 'session',
-      'provider' => 'users',
+    'guards' => [
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+        'api' => [
+            'driver' => 'jwt',
+            'provider' => 'users',
+        ],
     ],
-  ],
 
-  /*
+    /*
     |--------------------------------------------------------------------------
     | User Providers
     |--------------------------------------------------------------------------
@@ -67,21 +61,21 @@ return [
     |
     | Supported: "database", "eloquent"
     |
-    */
+     */
 
-  'providers' => [
-    'users' => [
-      'driver' => 'eloquent',
-      'model' => App\Models\User::class,
+    'providers' => [
+        'users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
+        ],
+
+        // 'users' => [
+        //     'driver' => 'database',
+        //     'table' => 'users',
+        // ],
     ],
 
-    // 'users' => [
-    //     'driver' => 'database',
-    //     'table' => 'users',
-    // ],
-  ],
-
-  /*
+    /*
     |--------------------------------------------------------------------------
     | Resetting Passwords
     |--------------------------------------------------------------------------
@@ -94,18 +88,18 @@ return [
     | considered valid. This security feature keeps tokens short-lived so
     | they have less time to be guessed. You may change this as needed.
     |
-    */
+     */
 
-  'passwords' => [
-    'users' => [
-      'provider' => 'users',
-      'table' => 'password_resets',
-      'expire' => 60,
-      'throttle' => 60,
+    'passwords' => [
+        'users' => [
+            'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
     ],
-  ],
 
-  /*
+    /*
     |--------------------------------------------------------------------------
     | Password Confirmation Timeout
     |--------------------------------------------------------------------------
@@ -114,8 +108,8 @@ return [
     | times out and the user is prompted to re-enter their password via the
     | confirmation screen. By default, the timeout lasts for three hours.
     |
-    */
+     */
 
-  'password_timeout' => 10800,
+    'password_timeout' => 10800,
 
 ];

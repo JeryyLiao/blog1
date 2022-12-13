@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class TagSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,8 +15,8 @@ class TagSeeder extends Seeder
      */
     public function run()
     {
-        Tag::truncate();
+        User::truncate();
 
-        Tag::factory()->times(30)->create();
+        User::factory()->times(3)->create();
     }
 }
