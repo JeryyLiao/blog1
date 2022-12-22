@@ -22,9 +22,12 @@ Route::apiResource('posts', 'App\Http\Controllers\Api\PostController');
 
 Route::any('pass', 'App\Http\Controllers\Api\PostController@doany');
 
-Route::post('items', 'App\Http\Controllers\Api\ItemController@store');
+//Route::post('items', 'App\Http\Controllers\Api\ItemController@store');
 Route::post('articles', 'App\Http\Controllers\Api\ArticleController@store');
 Route::resource('/articles', 'App\Http\Controllers\ArticleController');
+Route::apiResource('items', 'App\Http\Controllers\Api\ItemController');
+// Route::post('items', 'App\Http\Controllers\Api\ItemController@store');
+Route::apiResource('cgies', 'App\Http\Controllers\Api\CgyController');
 
 //加入驗證路由
 Route::group(['prefix' => 'auth', 'namespace' => 'App\Http\Controllers\Api'], function () {
@@ -32,7 +35,6 @@ Route::group(['prefix' => 'auth', 'namespace' => 'App\Http\Controllers\Api'], fu
     Route::post('login', 'AuthController@login')->name('login');
     Route::post('logout', 'AuthController@logout')->name('logout');
 });
-
 
 //
 //Route::

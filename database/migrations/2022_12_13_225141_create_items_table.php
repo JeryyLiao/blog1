@@ -13,19 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cgies', function (Blueprint $table) {
+        Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->string('title', 20);
-            /*12/3HW沒有使用到此資料
-            $table->string('subject', 100);*/
-
             $table->string('pic', 255)->nullable();
-            /*12/3HW沒有使用到此資料
-            $table->text('desc')->nullable();
+            $table->integer('price')->default(0);
             $table->boolean('enabled')->default(true);
-            $table->timestamp('enabled_at')->nullable();*/
+            $table->text('desc')->nullable();
+            $table->timestamp('enabled_at')->nullable();
+            //$table->foreignId('cgy_id')->constrained();
+            //有外來鍵
+            $table->foreign('cgy_id')->references('id')->on('cgies')->onDelete('cascade')->onUpdate('cascade');
 
-            $table->integer('sort')->default(0);
             $table->timestamps();
         });
     }
@@ -37,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cgies');
+        Schema::dropIfExists('items');
     }
 };

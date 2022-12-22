@@ -15,13 +15,15 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('title',50);
-            $table->string('pic',255)->nullable();
-            $table->integer('sort')->default(0);
+            $table->string('title', 20);
+            $table->string('pic', 255)->nullable();
+            $table->integer('price')->default(0);
             $table->boolean('enabled')->default(true);
-            $table->string('content');
-            $table->string('status',10)->default('draft');
+            $table->text('desc');
+            $table->timestamp('enabled_at')->nullable();
+            $table->foreignId('cgy_id')->constrained();
             $table->timestamps();
+
         });
     }
 
@@ -32,6 +34,10 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        schema::table('items', function (Blueprint $table) {
+            $table->dropForeign(['cgy_id']);
+        });
+        Schema::dropIfExists('items');
+
     }
 };

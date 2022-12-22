@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
-use Carbon\Carbon;
+use App\Http\Controllers\Controller;
+use App\Models\Article;
 use App\Models\Cgy;
 use App\Models\Tag;
-use App\Models\Article;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 //請完成下方所有方法的實作，並撰寫對應的路由，用 Postman 來進行測試
 class ArticleController extends Controller
@@ -133,12 +133,12 @@ class ArticleController extends Controller
     //取得原分類ID為$old_cgy_id的第一個文章，將之改為新分類ID $new_cgy_id
     public function changeCgy($old_cgy_id, $new_cgy_id)
     {
-        $article = Article::where('cgy_id',$old_cgy_id)->first();
+        $article = Article::where('cgy_id', $old_cgy_id)->first();
         // $article->cgy_id = $new_cgy_id;
         // $article->save();
 
         $new_cgy = Cgy::find($new_cgy_id);
-        $new_cgy->articles()->save($article); 
+        $new_cgy->articles()->save($article);
         return Article::find($article->id);
     }
 
@@ -151,7 +151,7 @@ class ArticleController extends Controller
     //取得原分類 id 為$old_cgy_id的所有文章，將之改為新分類ID $new_cgy_id
     public function changeAllCgy($old_cgy_id, $new_cgy_id)
     {
-        $articles = Article::where('cgy_id',$old_cgy_id)->get();
+        $articles = Article::where('cgy_id', $old_cgy_id)->get();
 
         $new_cgy = Cgy::find($new_cgy_id);
         $new_cgy->articles()->saveMany($articles);
@@ -182,10 +182,10 @@ class ArticleController extends Controller
         return 'removeTag';
     }
 
-    //將指定文章的標籤重新設定為 1 , 3 , 5 
+    //將指定文章的標籤重新設定為 1 , 3 , 5
     public function syncTag(Article $article)
     {
-        $article->tags()->sync([1,3,5]);
+        $article->tags()->sync([1, 3, 5]);
         return $article->tags;
         return 'syncTag';
     }
@@ -194,7 +194,7 @@ class ArticleController extends Controller
     public function addTagWithColor(Article $article, $tag_id, $color)
     {
         $tag = Tag::find($tag_id);
-        $article->tags()->save($tag,['color'=>'#' . $color]);
+        $article->tags()->save($tag, ['color' => '#' . $color]);
         return $article->tags;
         return 'addTagWithColor';
     }
